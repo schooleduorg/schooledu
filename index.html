@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SchoolEdu - U.S. Department of Education Learning Platform</title>
+  <title>SchoolEdu - Educational Learning Platform</title>
   <link rel="icon" href="/schooledu.png" type="image/png">
   <style>
     * {
@@ -175,7 +175,7 @@
       border-radius: 12px;
       width: 95%;
       max-width: 1200px;
-      height: 85vh;
+      height: 90vh;
       position: relative;
       box-shadow: 0 15px 40px rgba(0,0,0,0.4);
       overflow: hidden;
@@ -184,28 +184,23 @@
     }
     .embedded-modal-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-      padding: 15px 25px;
+      padding: 8px 12px;
       background: #f5f7fa;
       border-bottom: 1px solid #ddd;
       flex-shrink: 0;
-    }
-    .embedded-modal-header h2 {
-      color: #003366;
-      font-size: 1.4rem;
-      margin: 0;
-      font-weight: 600;
+      height: 45px;
     }
     .embedded-close-btn {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       cursor: pointer;
       color: #666;
       background: none;
       border: none;
       padding: 0;
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -333,10 +328,7 @@
         height: 90vh;
       }
       .embedded-modal-header {
-        padding: 12px 15px;
-      }
-      .embedded-modal-header h2 {
-        font-size: 1.2rem;
+        padding: 8px 10px;
       }
     }
   </style>
@@ -344,11 +336,11 @@
 <body>
   <!-- Government banner -->
   <div class="gov-banner">
-    <div class="official">An official website of the United States government</div>
+    <div class="official">Educational Resource Platform</div>
     <div class="links">
-      <a href="https://www.ed.gov/privacy-policy" target="_blank">Privacy Policy</a>
-      <a href="https://www.ed.gov/accessibility" target="_blank">Accessibility</a>
-      <a href="https://www2.ed.gov/policy/gen/leg/foia/foia-request-form.html" target="_blank">FOIA</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Information</a>
     </div>
   </div>
   
@@ -357,7 +349,7 @@
       <img src="/schooledu.png" alt="SchoolEdu Logo">
       <div class="logo-text">
         <h1>SchoolEdu</h1>
-        <div class="subtitle">U.S. Department of Education Learning Platform</div>
+        <div class="subtitle">Educational Learning Platform</div>
       </div>
     </div>
     <nav>
@@ -371,14 +363,14 @@
   <section class="hero">
     <img src="/schooledu.png" alt="SchoolEdu Icon">
     <h1>Your Future Starts Here</h1>
-    <p>SchoolEdu is the official U.S. Department of Education platform providing free, high-quality educational resources to students, teachers, and schools nationwide.</p>
+    <p>SchoolEdu provides free, high-quality educational resources to students, teachers, and schools nationwide.</p>
     
     <button id="openEmbeddedBtn">Login / Sign Up</button>
     
     <div class="trust-badges">
       <div class="trust-badge">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNTZiMyI+PHBhdGggZD0iTTEyLDJMNiwyMUgxOEwxMiwyWiIvPjwvc3ZnPg==" alt="Verified">
-        <span>Federally Verified</span>
+        <span>Education Verified</span>
       </div>
       <div class="trust-badge">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNTZiMyI+PHBhdGggZD0iTTEyLDFMMiw3VjE3TDEyLDIzTDIyLDE3VjdMMTMsMU0xMiwzTDIwLDcuNUwxMiwxMkw0LDcuNUwxMiwzWiIvPjwvc3ZnPg==" alt="Secure">
@@ -395,7 +387,6 @@
   <div class="embedded-modal" id="embeddedModal">
     <div class="embedded-modal-content">
       <div class="embedded-modal-header">
-        <h2></h2>
         <button class="embedded-close-btn" id="closeEmbeddedModal">&times;</button>
       </div>
       <div class="embedded-iframe-container">
@@ -406,12 +397,12 @@
   
   <section class="about" id="about">
     <h2>About SchoolEdu</h2>
-    <p>SchoolEdu is an initiative of the U.S. Department of Education designed to provide equitable access to high-quality educational resources for all American students. Our platform aligns with state educational standards and offers curriculum materials, interactive learning tools, and professional development resources for educators.</p>
-    <p>Through partnerships with educational institutions and technology providers, we ensure that our resources remain current, effective, and accessible to students regardless of their location or socioeconomic background.</p>
+    <p>SchoolEdu is designed to provide equitable access to high-quality educational resources for all students. Our platform aligns with educational standards and offers curriculum materials, interactive learning tools, and professional development resources for educators.</p>
+    <p>Through partnerships with educational institutions and technology providers, we ensure that our resources remain current, effective, and accessible to students regardless of their location or background.</p>
   </section>
   
   <section class="partners" id="resources">
-    <h2>Trusted Educational Partners</h2>
+    <h2>Educational Partners</h2>
     <div class="partner-logos">
       <div class="partner-logo">Code.org</div>
       <div class="partner-logo">Khan Academy</div>
@@ -424,43 +415,43 @@
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>For technical support or questions about our programs:</p>
-    <p>Email: <a href="mailto:customerservice@ed.gov">customerservice@ed.gov</a></p>
-    <p>Phone: 1-800-USA-LEARN (1-800-872-5327)</p>
+    <p>Email: <a href="mailto:support@schooledu.org">support@schooledu.org</a></p>
+    <p>Phone: 1-800-EDU-HELP (1-800-338-4357)</p>
   </section>
   
   <footer>
     <div class="footer-content">
       <div class="footer-section">
         <h3>Programs</h3>
-        <a href="https://www2.ed.gov/about/overview/fed/role.html" target="_blank">Elementary School</a>
-        <a href="https://www2.ed.gov/about/overview/fed/role.html" target="_blank">Middle School</a>
-        <a href="https://www2.ed.gov/about/overview/fed/role.html" target="_blank">High School</a>
-        <a href="https://www2.ed.gov/about/offices/list/osers/index.html" target="_blank">Special Education</a>
+        <a href="#">Elementary School</a>
+        <a href="#">Middle School</a>
+        <a href="#">High School</a>
+        <a href="#">Special Education</a>
       </div>
       <div class="footer-section">
         <h3>Resources</h3>
-        <a href="https://www2.ed.gov/teachers/how/tools/initiative/index.html" target="_blank">For Teachers</a>
-        <a href="https://www2.ed.gov/parents/landing.jhtml" target="_blank">For Parents</a>
-        <a href="https://www2.ed.gov/admins/landing.jhtml" target="_blank">For Administrators</a>
-        <a href="https://ies.ed.gov" target="_blank">Research & Data</a>
+        <a href="#">For Teachers</a>
+        <a href="#">For Parents</a>
+        <a href="#">For Administrators</a>
+        <a href="#">Research & Data</a>
       </div>
       <div class="footer-section">
         <h3>Support</h3>
-        <a href="https://www.ed.gov/help" target="_blank">Help Center</a>
-        <a href="https://www.ed.gov/contact" target="_blank">Contact Us</a>
-        <a href="https://www.ed.gov/accessibility" target="_blank">Accessibility</a>
-        <a href="https://www.ed.gov/notices" target="_blank">System Status</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Accessibility</a>
+        <a href="#">System Status</a>
       </div>
       <div class="footer-section">
         <h3>Legal</h3>
-        <a href="https://www.ed.gov/privacy-policy" target="_blank">Privacy Policy</a>
-        <a href="https://www.ed.gov/notices" target="_blank">Terms of Service</a>
-        <a href="https://www2.ed.gov/policy/gen/leg/foia/foia-request-form.html" target="_blank">FOIA</a>
-        <a href="https://www.ed.gov/security" target="_blank">Security</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Information</a>
+        <a href="#">Security</a>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2025 SchoolEdu — U.S. Department of Education. All rights reserved.
+      © 2025 SchoolEdu — Educational Learning Platform. All rights reserved.
     </div>
   </footer>
   
