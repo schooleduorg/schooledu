@@ -1,279 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SchoolEdu</title>
-  <link rel="icon" href="/schooledu.png" type="image/png">
-  <!-- Google Identity Services -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #f5f7fa;
-      color: #222;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SchoolEdu</title>
+<link rel="icon" href="/schooledu.png" type="image/png">
+<style>
+  /* Reset */
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family:"Segoe UI", Roboto, Arial, sans-serif; background:#f5f7fa; color:#222; line-height:1.6; }
 
-    /* Navbar */
-    header {
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      flex-wrap: wrap;
-    }
+  /* Header */
+  header { background:#fff; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; position:sticky; top:0; flex-wrap:wrap; z-index:100; }
+  .logo { display:flex; align-items:center; gap:10px; }
+  .logo img { width:50px; height:50px; border-radius:12px; }
+  .logo h1 { font-size:1.4rem; color:#0056b3; font-weight:600; }
+  nav { display:flex; gap:15px; flex-wrap:wrap; }
+  nav a { text-decoration:none; color:#0056b3; font-weight:500; padding:8px 12px; border-radius:6px; transition:0.2s; }
+  nav a:hover { background:#e7f1ff; }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  /* Hero Section */
+  .hero { text-align:center; padding:80px 20px 60px; background:linear-gradient(to bottom,#fff,#eef4ff); }
+  .hero img { width:140px; height:140px; border-radius:20px; margin-bottom:25px; }
+  .hero h1 { font-size:2.2rem; color:#003366; margin-bottom:15px; }
+  .hero p { font-size:1.1rem; color:#555; max-width:600px; margin:0 auto 30px; }
+  .hero button { padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background:#0056b3; color:#fff; cursor:pointer; transition:0.2s; }
+  .hero button:hover { background:#004499; }
 
-    .logo img {
-      width: 45px;
-      height: 45px;
-      border-radius: 12px;
-    }
+  /* Modal */
+  .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:200; padding:15px; }
+  .modal-content { background:#fff; padding:30px 25px; border-radius:12px; max-width:400px; width:100%; text-align:center; position:relative; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+  .modal-content h2 { color:#003366; margin-bottom:20px; }
+  .modal-content label { display:block; margin-bottom:5px; font-weight:500; text-align:left; }
+  .modal-content input { width:100%; padding:10px 12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+  .modal-content button { width:100%; padding:12px; margin-bottom:10px; border:none; border-radius:6px; font-size:1rem; cursor:pointer; background:#0056b3; color:#fff; transition:0.2s; }
+  .modal-content button:hover { background:#004499; }
+  .close-btn { position:absolute; top:10px; right:15px; font-size:1.4rem; cursor:pointer; color:#666; }
 
-    .logo h1 {
-      font-size: 1.3rem;
-      color: #0056b3;
-      font-weight: 600;
-    }
+  /* Sections */
+  section { padding:60px 20px; max-width:1000px; margin:0 auto; }
+  .about h2, .programs h2 { font-size:1.8rem; color:#003366; margin-bottom:20px; }
+  .about p, .programs p { font-size:1rem; color:#555; margin-bottom:40px; line-height:1.6; }
+  .program-list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+  .program-card { background:#fff; padding:25px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); width:200px; text-align:center; transition:transform 0.2s; font-weight:500; font-size:1rem; color:#0056b3; }
+  .program-card:hover { transform:translateY(-5px); }
 
-    nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
+  .contact { text-align:center; }
+  .contact a { color:#0056b3; text-decoration:none; }
+  .contact a:hover { text-decoration:underline; }
 
-    nav a {
-      text-decoration: none;
-      color: #0056b3;
-      font-weight: 500;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background-color 0.2s;
-    }
+  footer { text-align:center; padding:25px 20px; font-size:0.9rem; color:#666; background:#fafafa; border-top:1px solid #ddd; }
 
-    nav a:hover {
-      background-color: #e7f1ff;
-    }
-
-    /* Hero section */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 60px;
-      background: linear-gradient(to bottom, #ffffff, #eef4ff);
-    }
-
-    .hero img {
-      width: 120px;
-      height: 120px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      color: #003366;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1rem;
-      color: #555;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .google-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #4285F4;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
-    }
-
-    .google-btn:hover {
-      background-color: #357ae8;
-    }
-
-    .google-btn img {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* About & Programs */
-    .about, .programs {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about h2, .programs h2 {
-      font-size: 1.6rem;
-      color: #003366;
-      margin-bottom: 20px;
-    }
-
-    .about p, .programs p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
-
-    .program-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .program-card {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      width: 180px;
-      transition: transform 0.2s;
-      text-align: center;
-    }
-
-    .program-card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Contact */
-    .contact {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #666;
-      background-color: #fafafa;
-      border-top: 1px solid #ddd;
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-      .hero p {
-        font-size: 0.95rem;
-      }
-      .program-card {
-        width: 140px;
-      }
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+  @media(max-width:600px){
+    .hero h1{ font-size:1.7rem; }
+    .hero p{ font-size:0.95rem; }
+    .program-card{ width:150px; font-size:0.95rem; }
+    nav{ justify-content:center; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="/schooledu.png" alt="SchoolEdu Logo">
-      <h1>SchoolEdu</h1>
-    </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <img src="/schooledu.png" alt="SchoolEdu Icon">
-    <h1>Your Future Stands Here</h1>
-    <p>Welcome to SchoolEdu — where learning meets opportunity. Join our community to access modern education built for today’s students.</p>
-    <div class="buttons">
-      <!-- Google Sign-In button -->
-      <button class="google-btn" id="googleSignInBtn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">
-        Sign in with Google
-      </button>
-    </div>
-  </section>
+<header>
+  <div class="logo">
+    <img src="/schooledu.png" alt="SchoolEdu Logo">
+    <h1>SchoolEdu</h1>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="about" id="about">
-    <h2>About SchoolEdu</h2>
-    <p>
-      At SchoolEdu, we believe every student has the potential to achieve greatness. Our mission is to empower learners with knowledge, skills, and confidence to shape their future. With innovative teaching methods and engaging programs, we make learning inspiring, interactive, and impactful.
-    </p>
-  </section>
+<section class="hero">
+  <img src="/schooledu.png" alt="SchoolEdu Icon">
+  <h1>Your Future Starts Here</h1>
+  <p>Join SchoolEdu today to unlock your potential and explore our exciting programs!</p>
+  <button id="openModalBtn">Sign Up / Login</button>
+</section>
 
-  <section class="programs" id="programs">
-    <h2>Our Programs</h2>
-    <p>We offer a variety of programs designed to help students excel academically and creatively:</p>
-    <div class="program-list">
-      <div class="program-card">Coding</div>
-      <div class="program-card">Mathematics</div>
-      <div class="program-card">Science</div>
-      <div class="program-card">Art & Design</div>
-      <div class="program-card">Creative Writing</div>
-      <div class="program-card">Robotics</div>
-    </div>
-  </section>
+<!-- Modal -->
+<div class="modal" id="authModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Welcome</h2>
+    <button id="showSignUp">Sign Up</button>
+    <button id="showLogin">Login</button>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:help@schooledu.org">help@schooledu.org</a></p>
-  </section>
+    <!-- Sign Up Form -->
+    <form id="signUpForm" style="display:none; text-align:left;">
+      <h2 style="text-align:center;">Sign Up</h2>
+      <label for="signupEmail">Gmail Address</label>
+      <input type="email" id="signupEmail" placeholder="you@gmail.com" required>
+      <label for="signupPassword">Password</label>
+      <input type="password" id="signupPassword" placeholder="Enter password" required>
+      <button type="submit">Sign Up</button>
+    </form>
 
-  <footer>
-    © 2025 SchoolEdu — All rights reserved.
-  </footer>
+    <!-- Login Form -->
+    <form id="loginForm" style="display:none; text-align:left;">
+      <h2 style="text-align:center;">Login</h2>
+      <label for="loginEmail">Gmail Address</label>
+      <input type="email" id="loginEmail" placeholder="you@gmail.com" required>
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
 
-  <script>
-    // Replace this with your actual Google OAuth client ID
-    const CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID";
+<section class="about" id="about">
+  <h2>About SchoolEdu</h2>
+  <p>
+    At SchoolEdu, we believe every student has the potential to achieve greatness. Our mission is to empower learners with knowledge, skills, and confidence to shape their future. With innovative teaching methods and engaging programs, we make learning inspiring, interactive, and impactful.
+  </p>
+</section>
 
-    // Initialize Google Identity Services
-    window.onload = () => {
-      google.accounts.id.initialize({
-        client_id: CLIENT_ID,
-        callback: handleCredentialResponse
-      });
-      document.getElementById('googleSignInBtn').addEventListener('click', () => {
-        google.accounts.id.prompt(); // Shows the Google Sign-In popup
-      });
-    };
+<section class="programs" id="programs">
+  <h2>Our Programs</h2>
+  <p>We offer a variety of programs designed to help students excel academically and creatively:</p>
+  <div class="program-list">
+    <div class="program-card">Coding</div>
+    <div class="program-card">Mathematics</div>
+    <div class="program-card">Science</div>
+    <div class="program-card">Art & Design</div>
+    <div class="program-card">Creative Writing</div>
+    <div class="program-card">Robotics</div>
+  </div>
+</section>
 
-    function handleCredentialResponse(response) {
-      console.log("Google JWT Token:", response.credential);
-      alert("Successfully signed in with Google!");
-      // Here you can decode the JWT to get user info if needed
-    }
-  </script>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:help@schooledu.org">help@schooledu.org</a></p>
+</section>
+
+<footer>
+  © 2025 SchoolEdu — All rights reserved.
+</footer>
+
+<script>
+  // Modal open/close
+  const openModalBtn = document.getElementById('openModalBtn');
+  const authModal = document.getElementById('authModal');
+  const closeModal = document.getElementById('closeModal');
+  const showSignUpBtn = document.getElementById('showSignUp');
+  const showLoginBtn = document.getElementById('showLogin');
+  const signUpForm = document.getElementById('signUpForm');
+  const loginForm = document.getElementById('loginForm');
+
+  openModalBtn.addEventListener('click', () => { authModal.style.display = 'flex'; });
+  closeModal.addEventListener('click', () => { authModal.style.display = 'none'; });
+  window.addEventListener('click', e => { if(e.target == authModal) authModal.style.display='none'; });
+
+  showSignUpBtn.addEventListener('click', () => { signUpForm.style.display='block'; loginForm.style.display='none'; });
+  showLoginBtn.addEventListener('click', () => { loginForm.style.display='block'; signUpForm.style.display='none'; });
+
+  // Fake Sign Up
+  signUpForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('signupEmail').value;
+    alert(`Account created! Welcome, ${email}`);
+    signUpForm.reset();
+    authModal.style.display='none';
+  });
+
+  // Fake Login
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    alert(`Logged in! Welcome back, ${email}`);
+    loginForm.reset();
+    authModal.style.display='none';
+  });
+</script>
+
 </body>
 </html>
