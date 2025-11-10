@@ -6,57 +6,45 @@
 <title>SchoolEdu</title>
 <link rel="icon" href="/schooledu.png" type="image/png">
 <style>
-  /* Reset */
-  * { box-sizing: border-box; margin:0; padding:0; }
-  body { font-family:"Segoe UI", Roboto, Arial, sans-serif; background:#f5f7fa; color:#222; line-height:1.6; }
-
-  /* Header */
-  header { background:#fff; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; position:sticky; top:0; flex-wrap:wrap; z-index:100; }
-  .logo { display:flex; align-items:center; gap:10px; }
-  .logo img { width:50px; height:50px; border-radius:12px; }
-  .logo h1 { font-size:1.4rem; color:#0056b3; font-weight:600; }
-  nav { display:flex; gap:15px; flex-wrap:wrap; }
-  nav a { text-decoration:none; color:#0056b3; font-weight:500; padding:8px 12px; border-radius:6px; transition:0.2s; }
-  nav a:hover { background:#e7f1ff; }
-
-  /* Hero Section */
-  .hero { text-align:center; padding:80px 20px 60px; background:linear-gradient(to bottom,#fff,#eef4ff); }
-  .hero img { width:140px; height:140px; border-radius:20px; margin-bottom:25px; }
-  .hero h1 { font-size:2.2rem; color:#003366; margin-bottom:15px; }
-  .hero p { font-size:1.1rem; color:#555; max-width:600px; margin:0 auto 30px; }
-  .hero button { padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background:#0056b3; color:#fff; cursor:pointer; transition:0.2s; }
-  .hero button:hover { background:#004499; }
-
-  /* Modal */
-  .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:200; padding:15px; }
-  .modal-content { background:#fff; padding:30px 25px; border-radius:12px; max-width:400px; width:100%; text-align:center; position:relative; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-  .modal-content h2 { color:#003366; margin-bottom:20px; }
-  .modal-content label { display:block; margin-bottom:5px; font-weight:500; text-align:left; }
-  .modal-content input { width:100%; padding:10px 12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
-  .modal-content button { width:100%; padding:12px; margin-bottom:10px; border:none; border-radius:6px; font-size:1rem; cursor:pointer; background:#0056b3; color:#fff; transition:0.2s; }
-  .modal-content button:hover { background:#004499; }
-  .close-btn { position:absolute; top:10px; right:15px; font-size:1.4rem; cursor:pointer; color:#666; }
-
-  /* Sections */
-  section { padding:60px 20px; max-width:1000px; margin:0 auto; }
-  .about h2, .programs h2 { font-size:1.8rem; color:#003366; margin-bottom:20px; }
-  .about p, .programs p { font-size:1rem; color:#555; margin-bottom:40px; line-height:1.6; }
-  .program-list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .program-card { background:#fff; padding:25px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); width:200px; text-align:center; transition:transform 0.2s; font-weight:500; font-size:1rem; color:#0056b3; }
-  .program-card:hover { transform:translateY(-5px); }
-
-  .contact { text-align:center; }
-  .contact a { color:#0056b3; text-decoration:none; }
-  .contact a:hover { text-decoration:underline; }
-
-  footer { text-align:center; padding:25px 20px; font-size:0.9rem; color:#666; background:#fafafa; border-top:1px solid #ddd; }
-
-  @media(max-width:600px){
-    .hero h1{ font-size:1.7rem; }
-    .hero p{ font-size:0.95rem; }
-    .program-card{ width:150px; font-size:0.95rem; }
-    nav{ justify-content:center; }
-  }
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family:"Segoe UI", Roboto, Arial, sans-serif; background:#f5f7fa; color:#222; line-height:1.6; }
+header { background:#fff; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; position:sticky; top:0; flex-wrap:wrap; z-index:100; }
+.logo { display:flex; align-items:center; gap:10px; }
+.logo img { width:50px; height:50px; border-radius:12px; }
+.logo h1 { font-size:1.4rem; color:#0056b3; font-weight:600; }
+nav { display:flex; gap:15px; flex-wrap:wrap; }
+nav a { text-decoration:none; color:#0056b3; font-weight:500; padding:8px 12px; border-radius:6px; transition:0.2s; }
+nav a:hover { background:#e7f1ff; }
+.hero { text-align:center; padding:80px 20px 60px; background:linear-gradient(to bottom,#fff,#eef4ff); }
+.hero img { width:140px; height:140px; border-radius:20px; margin-bottom:25px; }
+.hero h1 { font-size:2.2rem; color:#003366; margin-bottom:15px; }
+.hero p { font-size:1.1rem; color:#555; max-width:600px; margin:0 auto 30px; }
+.hero button { padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background:#0056b3; color:#fff; cursor:pointer; transition:0.2s; }
+.hero button:hover { background:#004499; }
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:200; padding:15px; }
+.modal-content { background:#fff; padding:30px 25px; border-radius:12px; max-width:400px; width:100%; text-align:center; position:relative; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.modal-content h2 { color:#003366; margin-bottom:20px; }
+.modal-content label { display:block; margin-bottom:5px; font-weight:500; text-align:left; }
+.modal-content input { width:100%; padding:10px 12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+.modal-content button { width:100%; padding:12px; margin-bottom:10px; border:none; border-radius:6px; font-size:1rem; cursor:pointer; background:#0056b3; color:#fff; transition:0.2s; }
+.modal-content button:hover { background:#004499; }
+.close-btn { position:absolute; top:10px; right:15px; font-size:1.4rem; cursor:pointer; color:#666; }
+section { padding:60px 20px; max-width:1000px; margin:0 auto; }
+.about h2, .programs h2 { font-size:1.8rem; color:#003366; margin-bottom:20px; }
+.about p, .programs p { font-size:1rem; color:#555; margin-bottom:40px; line-height:1.6; }
+.program-list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.program-card { background:#fff; padding:25px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); width:200px; text-align:center; transition:transform 0.2s; font-weight:500; font-size:1rem; color:#0056b3; }
+.program-card:hover { transform:translateY(-5px); }
+.contact { text-align:center; }
+.contact a { color:#0056b3; text-decoration:none; }
+.contact a:hover { text-decoration:underline; }
+footer { text-align:center; padding:25px 20px; font-size:0.9rem; color:#666; background:#fafafa; border-top:1px solid #ddd; }
+@media(max-width:600px){
+.hero h1{ font-size:1.7rem; }
+.hero p{ font-size:0.95rem; }
+.program-card{ width:150px; font-size:0.95rem; }
+nav{ justify-content:center; }
+}
 </style>
 </head>
 <body>
@@ -81,7 +69,6 @@
   <button id="openModalBtn">Sign Up / Login</button>
 </section>
 
-<!-- Modal -->
 <div class="modal" id="authModal">
   <div class="modal-content">
     <span class="close-btn" id="closeModal">&times;</span>
@@ -89,7 +76,6 @@
     <button id="showSignUp">Sign Up</button>
     <button id="showLogin">Login</button>
 
-    <!-- Sign Up Form -->
     <form id="signUpForm" style="display:none; text-align:left;">
       <h2 style="text-align:center;">Sign Up</h2>
       <label for="signupEmail">Gmail Address</label>
@@ -99,7 +85,6 @@
       <button type="submit">Sign Up</button>
     </form>
 
-    <!-- Login Form -->
     <form id="loginForm" style="display:none; text-align:left;">
       <h2 style="text-align:center;">Login</h2>
       <label for="loginEmail">Gmail Address</label>
@@ -113,9 +98,7 @@
 
 <section class="about" id="about">
   <h2>About SchoolEdu</h2>
-  <p>
-    At SchoolEdu, we believe every student has the potential to achieve greatness. Our mission is to empower learners with knowledge, skills, and confidence to shape their future. With innovative teaching methods and engaging programs, we make learning inspiring, interactive, and impactful.
-  </p>
+  <p>At SchoolEdu, we believe every student has the potential to achieve greatness. Our mission is to empower learners with knowledge, skills, and confidence to shape their future. With innovative teaching methods and engaging programs, we make learning inspiring, interactive, and impactful.</p>
 </section>
 
 <section class="programs" id="programs">
@@ -141,39 +124,36 @@
 </footer>
 
 <script>
-  // Modal open/close
-  const openModalBtn = document.getElementById('openModalBtn');
-  const authModal = document.getElementById('authModal');
-  const closeModal = document.getElementById('closeModal');
-  const showSignUpBtn = document.getElementById('showSignUp');
-  const showLoginBtn = document.getElementById('showLogin');
-  const signUpForm = document.getElementById('signUpForm');
-  const loginForm = document.getElementById('loginForm');
+const openModalBtn=document.getElementById('openModalBtn');
+const authModal=document.getElementById('authModal');
+const closeModal=document.getElementById('closeModal');
+const showSignUpBtn=document.getElementById('showSignUp');
+const showLoginBtn=document.getElementById('showLogin');
+const signUpForm=document.getElementById('signUpForm');
+const loginForm=document.getElementById('loginForm');
 
-  openModalBtn.addEventListener('click', () => { authModal.style.display = 'flex'; });
-  closeModal.addEventListener('click', () => { authModal.style.display = 'none'; });
-  window.addEventListener('click', e => { if(e.target == authModal) authModal.style.display='none'; });
+openModalBtn.addEventListener('click',()=>{authModal.style.display='flex';});
+closeModal.addEventListener('click',()=>{authModal.style.display='none';});
+window.addEventListener('click',e=>{if(e.target==authModal)authModal.style.display='none';});
 
-  showSignUpBtn.addEventListener('click', () => { signUpForm.style.display='block'; loginForm.style.display='none'; });
-  showLoginBtn.addEventListener('click', () => { loginForm.style.display='block'; signUpForm.style.display='none'; });
+showSignUpBtn.addEventListener('click',()=>{
+  signUpForm.style.display='block';
+  loginForm.style.display='none';
+});
+showLoginBtn.addEventListener('click',()=>{
+  loginForm.style.display='block';
+  signUpForm.style.display='none';
+});
 
-  // Fake Sign Up
-  signUpForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const email = document.getElementById('signupEmail').value;
-    alert(`Account created! Welcome, ${email}`);
-    signUpForm.reset();
-    authModal.style.display='none';
-  });
+signUpForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  alert("Sorry, we're currently doing some maintenance.\nPlease try signing up again later.");
+});
 
-  // Fake Login
-  loginForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    alert(`Logged in! Welcome back, ${email}`);
-    loginForm.reset();
-    authModal.style.display='none';
-  });
+loginForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  alert("Sorry, we're currently doing some maintenance.\nPlease try logging in again later.");
+});
 </script>
 
 </body>
