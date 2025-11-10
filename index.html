@@ -10,41 +10,45 @@
       box-sizing: border-box;
       margin:0;
       padding:0;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
     }
     body {
       font-family:"Segoe UI", Roboto, Arial, sans-serif;
-      background:#f5f7fa;
-      color:#222;
-      line-height:1.6;
+      background:#ffffff;
+      color:#333;
+      line-height:1.5;
     }
-    /* Government header styling */
-    .gov-banner {
-      background: #1b3d6d;
-      color: white;
-      padding: 8px 20px;
-      font-size: 0.85rem;
+    /* Header styling */
+    .header-banner {
+      background: #f8f9fa;
+      color: #666;
+      padding: 6px 20px;
+      font-size: 0.8rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
+      border-bottom: 1px solid #eaeaea;
     }
-    .gov-banner a {
-      color: white;
-      text-decoration: underline;
+    .header-banner a {
+      color: #666;
+      text-decoration: none;
     }
-    .gov-banner .official {
+    .header-banner .platform {
       font-weight: 600;
     }
-    .gov-banner .links {
+    .header-banner .links {
       display: flex;
-      gap: 15px;
+      gap: 16px;
     }
     header {
       background:#fff;
-      border-bottom:1px solid #ddd;
+      border-bottom:1px solid #eaeaea;
       display:flex;
       justify-content:center;
       align-items:center;
-      padding:10px 20px;
+      padding:12px 20px;
       position:sticky;
       top:0;
       flex-wrap:wrap;
@@ -55,31 +59,32 @@
       display:flex;
       align-items:center;
       gap:10px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .logo img {
-      width:50px;
-      height:50px;
-      border-radius:12px;
+      width:44px;
+      height:44px;
+      border-radius:10px;
     }
     .logo-text {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
     .logo h1 {
       font-size:1.4rem;
       color:#0056b3;
       font-weight:600;
-      line-height: 1.2;
+      line-height: 1.1;
     }
     .logo .subtitle {
-      font-size: 0.8rem;
-      color: #666;
+      font-size: 0.75rem;
+      color: #777;
       font-weight: normal;
     }
     nav {
       display:flex;
-      gap:15px;
+      gap:16px;
       flex-wrap:wrap;
       justify-content: center;
     }
@@ -87,40 +92,42 @@
       text-decoration:none;
       color:#0056b3;
       font-weight:500;
-      padding:8px 12px;
-      border-radius:6px;
+      padding:6px 12px;
+      border-radius:4px;
       transition:0.2s;
+      font-size: 0.9rem;
     }
+    /* Removed hover background color */
     nav a:hover {
-      background:#e7f1ff;
+      color: #0056b3;
     }
     .hero {
       text-align:center;
-      padding:80px 20px 60px;
-      background:linear-gradient(to bottom,#fff,#eef4ff);
+      padding:60px 20px 40px;
+      background:#fff;
     }
     .hero img {
-      width:140px;
-      height:140px;
-      border-radius:20px;
-      margin-bottom:25px;
+      width:120px;
+      height:120px;
+      border-radius:16px;
+      margin-bottom:20px;
     }
     .hero h1 {
-      font-size:2.2rem;
+      font-size:2rem;
       color:#003366;
-      margin-bottom:15px;
+      margin-bottom:12px;
     }
     .hero p {
-      font-size:1.1rem;
+      font-size:1rem;
       color:#555;
-      max-width:600px;
-      margin:0 auto 30px;
+      max-width:560px;
+      margin:0 auto 24px;
     }
     .hero button {
-      padding:12px 25px;
-      font-size:1rem;
+      padding:10px 24px;
+      font-size:0.95rem;
       border:none;
-      border-radius:6px;
+      border-radius:5px;
       background:#0056b3;
       color:#fff;
       cursor:pointer;
@@ -133,26 +140,26 @@
     .trust-badges {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
+      gap: 28px;
+      margin-top: 32px;
       flex-wrap: wrap;
     }
     .trust-badge {
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 120px;
+      max-width: 100px;
       text-align: center;
     }
     .trust-badge img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
       filter: grayscale(30%);
     }
     .trust-badge span {
-      font-size: 0.85rem;
-      color: #555;
+      font-size: 0.8rem;
+      color: #666;
       font-weight: 500;
     }
     
@@ -172,12 +179,12 @@
     }
     .embedded-modal-content {
       background: #fff;
-      border-radius: 12px;
-      width: 95%;
+      border-radius: 8px;
+      width: 96%;
       max-width: 1200px;
       height: 90vh;
       position: relative;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -187,13 +194,13 @@
       justify-content: flex-end;
       align-items: center;
       padding: 8px 12px;
-      background: #f5f7fa;
-      border-bottom: 1px solid #ddd;
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
       flex-shrink: 0;
-      height: 45px;
+      height: 44px;
     }
     .embedded-close-btn {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       cursor: pointer;
       color: #666;
       background: none;
@@ -223,48 +230,88 @@
     }
     
     section {
-      padding:60px 20px;
+      padding:48px 20px;
       max-width:1000px;
       margin:0 auto;
     }
     .about h2 {
-      font-size:1.8rem;
+      font-size:1.6rem;
       color:#003366;
-      margin-bottom:20px;
+      margin-bottom:16px;
+      text-align: center;
     }
     .about p {
-      font-size:1rem;
+      font-size:0.95rem;
       color:#555;
-      margin-bottom:40px;
-      line-height:1.6;
+      margin-bottom:24px;
+      line-height:1.5;
+      text-align: center;
     }
     .partners {
-      background: #f0f5ff;
+      background: #f8f9fa;
       padding: 40px 20px;
       text-align: center;
     }
     .partners h2 {
       color: #003366;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
     .partner-logos {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 24px;
       flex-wrap: wrap;
     }
     .partner-logo {
-      width: 120px;
-      height: 60px;
+      width: 100px;
+      height: 50px;
       background: white;
-      border-radius: 8px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 600;
       color: #555;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      font-size: 0.85rem;
     }
+    
+    /* Resources Section */
+    .resources {
+      background: #fff;
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .resources h2 {
+      color: #003366;
+      margin-bottom: 32px;
+      font-size: 1.6rem;
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .resource-card {
+      background: #f8f9fa;
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #eaeaea;
+    }
+    .resource-card h3 {
+      color: #003366;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+    .resource-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
     .contact {
       text-align:center;
     }
@@ -275,11 +322,13 @@
     .contact a:hover {
       text-decoration:underline;
     }
+    
     /* Enhanced footer */
     footer {
-      background: #1b3d6d;
-      color: white;
+      background: #f8f9fa;
+      color: #666;
       padding: 40px 20px 20px;
+      border-top: 1px solid #eaeaea;
     }
     .footer-content {
       max-width: 1000px;
@@ -287,58 +336,77 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 30px;
+      gap: 24px;
+      margin-bottom: 24px;
     }
     .footer-section {
       flex: 1;
-      min-width: 200px;
+      min-width: 180px;
     }
     .footer-section h3 {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: #333;
     }
     .footer-section a {
-      color: #ccc;
+      color: #666;
       text-decoration: none;
       display: block;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
     }
     .footer-section a:hover {
-      color: white;
+      color: #0056b3;
       text-decoration: underline;
     }
     .footer-bottom {
       text-align: center;
       padding-top: 20px;
-      border-top: 1px solid #2a4f7c;
-      font-size: 0.85rem;
-      color: #ccc;
+      border-top: 1px solid #eaeaea;
+      font-size: 0.8rem;
+      color: #888;
     }
+    
+    /* Copyright Badge */
+    .copyright-badge {
+      background: #0056b3;
+      color: white;
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      border-top: 1px solid #eaeaea;
+    }
+    
     @media(max-width:600px){
-      .hero h1{ font-size:1.7rem; }
-      .hero p{ font-size:0.95rem; }
+      .hero h1{ font-size:1.6rem; }
+      .hero p{ font-size:0.9rem; }
       nav{ justify-content:center; }
-      .gov-banner { flex-direction: column; gap: 5px; text-align: center; }
+      .header-banner { 
+        flex-direction: column; 
+        gap: 4px; 
+        text-align: center;
+        padding: 6px 16px;
+      }
       .footer-content { flex-direction: column; }
       .embedded-modal-content {
         width: 98%;
-        height: 90vh;
+        height: 92vh;
       }
       .embedded-modal-header {
-        padding: 8px 10px;
+        padding: 6px 10px;
+      }
+      .resource-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Government banner -->
-  <div class="gov-banner">
-    <div class="official">Educational Resource Platform</div>
+  <!-- Header banner -->
+  <div class="header-banner">
+    <div class="platform">Educational Resource Platform</div>
     <div class="links">
-      <a href="#">Privacy Policy</a>
+      <a href="#">Privacy</a>
       <a href="#">Accessibility</a>
       <a href="#">Information</a>
     </div>
@@ -401,7 +469,29 @@
     <p>Through partnerships with educational institutions and technology providers, we ensure that our resources remain current, effective, and accessible to students regardless of their location or background.</p>
   </section>
   
-  <section class="partners" id="resources">
+  <section class="resources" id="resources">
+    <h2>Educational Resources</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Curriculum Materials</h3>
+        <p>Comprehensive lesson plans and educational content aligned with standards</p>
+      </div>
+      <div class="resource-card">
+        <h3>Interactive Tools</h3>
+        <p>Engaging digital tools and platforms for enhanced learning experiences</p>
+      </div>
+      <div class="resource-card">
+        <h3>Teacher Resources</h3>
+        <p>Professional development materials and classroom management tools</p>
+      </div>
+      <div class="resource-card">
+        <h3>Student Support</h3>
+        <p>Tutoring services, study guides, and academic assistance programs</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="partners">
     <h2>Educational Partners</h2>
     <div class="partner-logos">
       <div class="partner-logo">Code.org</div>
@@ -454,6 +544,10 @@
       © 2025 SchoolEdu — Educational Learning Platform. All rights reserved.
     </div>
   </footer>
+  
+  <div class="copyright-badge">
+    Copyright © 2025 SchoolEdu. All materials and content are protected by copyright law.
+  </div>
   
   <script>
     // Embedded page modal functionality
