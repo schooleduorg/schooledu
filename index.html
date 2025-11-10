@@ -97,9 +97,8 @@
       transition:0.2s;
       font-size: 0.9rem;
     }
-    /* Removed hover background color */
     nav a:hover {
-      color: #0056b3;
+      background:#f0f5ff;
     }
     .hero {
       text-align:center;
@@ -275,43 +274,6 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       font-size: 0.85rem;
     }
-    
-    /* Resources Section */
-    .resources {
-      background: #fff;
-      padding: 48px 20px;
-      text-align: center;
-    }
-    .resources h2 {
-      color: #003366;
-      margin-bottom: 32px;
-      font-size: 1.6rem;
-    }
-    .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .resource-card {
-      background: #f8f9fa;
-      padding: 24px;
-      border-radius: 8px;
-      text-align: center;
-      border: 1px solid #eaeaea;
-    }
-    .resource-card h3 {
-      color: #003366;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-    .resource-card p {
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-    
     .contact {
       text-align:center;
     }
@@ -322,7 +284,6 @@
     .contact a:hover {
       text-decoration:underline;
     }
-    
     /* Enhanced footer */
     footer {
       background: #f8f9fa;
@@ -366,17 +327,6 @@
       font-size: 0.8rem;
       color: #888;
     }
-    
-    /* Copyright Badge */
-    .copyright-badge {
-      background: #0056b3;
-      color: white;
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 0.85rem;
-      border-top: 1px solid #eaeaea;
-    }
-    
     @media(max-width:600px){
       .hero h1{ font-size:1.6rem; }
       .hero p{ font-size:0.9rem; }
@@ -394,9 +344,6 @@
       }
       .embedded-modal-header {
         padding: 6px 10px;
-      }
-      .resource-grid {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -469,29 +416,7 @@
     <p>Through partnerships with educational institutions and technology providers, we ensure that our resources remain current, effective, and accessible to students regardless of their location or background.</p>
   </section>
   
-  <section class="resources" id="resources">
-    <h2>Educational Resources</h2>
-    <div class="resource-grid">
-      <div class="resource-card">
-        <h3>Curriculum Materials</h3>
-        <p>Comprehensive lesson plans and educational content aligned with standards</p>
-      </div>
-      <div class="resource-card">
-        <h3>Interactive Tools</h3>
-        <p>Engaging digital tools and platforms for enhanced learning experiences</p>
-      </div>
-      <div class="resource-card">
-        <h3>Teacher Resources</h3>
-        <p>Professional development materials and classroom management tools</p>
-      </div>
-      <div class="resource-card">
-        <h3>Student Support</h3>
-        <p>Tutoring services, study guides, and academic assistance programs</p>
-      </div>
-    </div>
-  </section>
-  
-  <section class="partners">
+  <section class="partners" id="resources">
     <h2>Educational Partners</h2>
     <div class="partner-logos">
       <div class="partner-logo">Code.org</div>
@@ -544,10 +469,6 @@
       © 2025 SchoolEdu — Educational Learning Platform. All rights reserved.
     </div>
   </footer>
-  
-  <div class="copyright-badge">
-    Copyright © 2025 SchoolEdu. All materials and content are protected by copyright law.
-  </div>
   
   <script>
     // Embedded page modal functionality
