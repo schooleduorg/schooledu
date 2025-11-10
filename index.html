@@ -97,8 +97,9 @@
       transition:0.2s;
       font-size: 0.9rem;
     }
+    /* Removed hover background color */
     nav a:hover {
-      background:#f0f5ff;
+      color: #0056b3;
     }
     .hero {
       text-align:center;
@@ -246,34 +247,7 @@
       line-height:1.5;
       text-align: center;
     }
-    .partners {
-      background: #f8f9fa;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .partners h2 {
-      color: #003366;
-      margin-bottom: 24px;
-    }
-    .partner-logos {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .partner-logo {
-      width: 100px;
-      height: 50px;
-      background: white;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      color: #555;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      font-size: 0.85rem;
-    }
+    
     .contact {
       text-align:center;
     }
@@ -284,6 +258,7 @@
     .contact a:hover {
       text-decoration:underline;
     }
+    
     /* Enhanced footer */
     footer {
       background: #f8f9fa;
@@ -327,6 +302,18 @@
       font-size: 0.8rem;
       color: #888;
     }
+    
+    /* Copyright Badge */
+    .copyright-badge {
+      background: #f8f9fa;
+      color: #666;
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      border-top: 1px solid #eaeaea;
+      line-height: 1.4;
+    }
+    
     @media(max-width:600px){
       .hero h1{ font-size:1.6rem; }
       .hero p{ font-size:0.9rem; }
@@ -370,7 +357,6 @@
     <nav>
       <a href="#">Home</a>
       <a href="#about">About</a>
-      <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -416,21 +402,10 @@
     <p>Through partnerships with educational institutions and technology providers, we ensure that our resources remain current, effective, and accessible to students regardless of their location or background.</p>
   </section>
   
-  <section class="partners" id="resources">
-    <h2>Educational Partners</h2>
-    <div class="partner-logos">
-      <div class="partner-logo">Code.org</div>
-      <div class="partner-logo">Khan Academy</div>
-      <div class="partner-logo">Common Sense Media</div>
-      <div class="partner-logo">PBS Learning</div>
-      <div class="partner-logo">National Geographic</div>
-    </div>
-  </section>
-  
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>For technical support or questions about our programs:</p>
-    <p>Email: <a href="mailto:support@schooledu.org">support@schooledu.org</a></p>
+    <p>Email: <a href="mailto:support@schooledu.org">help@schooledu.org</a></p>
     <p>Phone: 1-800-EDU-HELP (1-800-338-4357)</p>
   </section>
   
@@ -465,10 +440,9 @@
         <a href="#">Security</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2025 SchoolEdu — Educational Learning Platform. All rights reserved.
-    </div>
-  </footer>
+  <div class="copyright-badge">
+    © schooledu.org, 2025. schooledu.org, the CODE logo, Hour of Code and CS Discoveries are trademarks of schooledu.org. Built on GitHub from Microsoft.
+  </div>
   
   <script>
     // Embedded page modal functionality
