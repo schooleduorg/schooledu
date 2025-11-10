@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SchoolEdu</title>
-  <link rel="icon" href="https://disgrace.wtf/discord/images/schooledu.png" type="image/png">
+  <link rel="icon" href="/schooledu.png" type="image/png">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
     body {
       margin: 0;
@@ -20,10 +21,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 40px;
+      padding: 10px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -46,14 +48,16 @@
 
     nav {
       display: flex;
-      gap: 15px;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
     nav a {
       text-decoration: none;
       color: #0056b3;
       font-weight: 500;
-      padding: 8px 15px;
+      padding: 8px 12px;
       border-radius: 6px;
       transition: background-color 0.2s;
     }
@@ -65,7 +69,7 @@
     /* Hero section */
     .hero {
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 80px 20px 60px;
       background: linear-gradient(to bottom, #ffffff, #eef4ff);
     }
 
@@ -77,13 +81,13 @@
     }
 
     .hero h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #003366;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #555;
       max-width: 600px;
       margin: 0 auto 30px;
@@ -92,7 +96,8 @@
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     button {
@@ -110,16 +115,16 @@
       background-color: #004499;
     }
 
-    /* About Section */
+    /* About & Programs */
     .about, .programs {
-      padding: 80px 20px;
+      padding: 60px 20px;
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
     }
 
     .about h2, .programs h2 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #003366;
       margin-bottom: 20px;
     }
@@ -135,7 +140,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
     }
 
     .program-card {
@@ -143,12 +148,19 @@
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      width: 200px;
+      width: 180px;
       transition: transform 0.2s;
+      text-align: center;
     }
 
     .program-card:hover {
       transform: translateY(-5px);
+    }
+
+    /* Contact */
+    .contact {
+      padding: 50px 20px;
+      text-align: center;
     }
 
     footer {
@@ -159,12 +171,28 @@
       background-color: #fafafa;
       border-top: 1px solid #ddd;
     }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+      .program-card {
+        width: 140px;
+      }
+      nav {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="https://disgrace.wtf/discord/images/schooledu.png" alt="SchoolEdu Logo">
+      <img src="/schooledu.png" alt="SchoolEdu Logo">
       <h1>SchoolEdu</h1>
     </div>
     <nav>
@@ -176,12 +204,18 @@
   </header>
 
   <section class="hero">
-    <img src="https://disgrace.wtf/discord/images/schooledu.png" alt="SchoolEdu Icon">
+    <img src="/schooledu.png" alt="SchoolEdu Icon">
     <h1>Your Future Stands Here</h1>
     <p>Welcome to SchoolEdu — where learning meets opportunity. Join our community to access modern education built for today’s students.</p>
     <div class="buttons">
-      <button onclick="googleSignIn()">Login with Google</button>
-      <button onclick="googleSignUp()">Sign Up</button>
+      <div id="g_id_onload"
+        data-client_id="YOUR_GOOGLE_CLIENT_ID"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-callback="handleCredentialResponse">
+      </div>
+
+      <div class="g_id_signin" data-type="standard"></div>
     </div>
   </section>
 
@@ -205,7 +239,7 @@
     </div>
   </section>
 
-  <section class="contact" id="contact" style="padding: 60px 20px; text-align:center;">
+  <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:help@schooledu.org">help@schooledu.org</a></p>
   </section>
@@ -215,11 +249,12 @@
   </footer>
 
   <script>
-    function googleSignIn() {
-      alert("Redirecting to Google Login...");
-    }
-    function googleSignUp() {
-      alert("Redirecting to Google Sign Up...");
+    function handleCredentialResponse(response) {
+      // This will return a JWT token from Google
+      console.log("Google JWT:", response.credential);
+
+      // Decode or display user info (basic example)
+      alert("Logged in with Google! Token saved in console.");
     }
   </script>
 </body>
