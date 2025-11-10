@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SchoolEdu - Educational Learning Platform</title>
-  <link rel="icon" href="/schooledufinal.png" type="image/png">
+  <link rel="icon" href="/schooledu.png" type="image/png">
   <style>
     * {
       box-sizing: border-box;
@@ -236,12 +236,17 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
     .resource-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
+      width: 60px;
       height: 60px;
+      margin: 0 auto 20px;
+      background: #0056b3;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
     .resource-card h3 {
       color: #003366;
@@ -461,6 +466,11 @@
         grid-template-columns: 1fr;
         gap: 20px;
       }
+      .resource-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -477,7 +487,7 @@
   
   <header>
     <div class="logo">
-      <img src="/schooledufinal.png" alt="SchoolEdu Logo">
+      <img src="/schooledu.png" alt="SchoolEdu Logo">
       <div class="logo-text">
         <h1>SchoolEdu</h1>
         <div class="subtitle">Educational Learning Platform</div>
@@ -492,7 +502,7 @@
   </header>
   
   <section class="hero">
-    <img src="/schooledufinal.png" alt="SchoolEdu Icon">
+    <img src="/schooledu.png" alt="SchoolEdu Icon">
     <h1>Your Future Starts Here</h1>
     <p>SchoolEdu provides free, high-quality educational resources to students, teachers, and schools nationwide.</p>
     
@@ -529,42 +539,42 @@
     
     <div class="resource-grid">
       <div class="resource-card">
-        <div class="resource-icon"></div>
+        <div class="resource-icon">CS</div>
         <h3>Coding & Programming</h3>
         <p>Learn computer science fundamentals, web development, and programming languages with interactive tutorials and projects.</p>
         <a href="#" class="resource-link" onclick="openEmbeddedModal()">Explore Coding</a>
       </div>
       
       <div class="resource-card">
-        <div class="resource-icon"></div>
+        <div class="resource-icon">WR</div>
         <h3>Writing & Composition</h3>
         <p>Improve your writing skills with grammar guides, essay templates, and creative writing exercises for all grade levels.</p>
         <a href="#" class="resource-link" onclick="openEmbeddedModal()">Start Writing</a>
       </div>
       
       <div class="resource-card">
-        <div class="resource-icon"></div>
+        <div class="resource-icon">HW</div>
         <h3>Homework Help</h3>
         <p>Get assistance with assignments across all subjects with step-by-step explanations and expert guidance.</p>
         <a href="#" class="resource-link" onclick="openEmbeddedModal()">Get Help</a>
       </div>
       
       <div class="resource-card">
-        <div class="resource-icon"></div>
+        <div class="resource-icon">SCI</div>
         <h3>Science Projects</h3>
         <p>Discover hands-on experiments, research projects, and STEM activities to explore scientific concepts.</p>
         <a href="#" class="resource-link" onclick="openEmbeddedModal()">Explore Science</a>
       </div>
       
       <div class="resource-card">
-        <div class="resource-icon"></div>
+        <div class="resource-icon">ART</div>
         <h3>Creative Arts</h3>
         <p>Develop artistic skills through digital art, music composition, photography, and design thinking exercises.</p>
         <a href="#" class="resource-link" onclick="openEmbeddedModal()">Create Art</a>
       </div>
       
       <div class="resource-card">
-        <div class="resource-icon"></div>
+        <div class="resource-icon">SS</div>
         <h3>Social Studies</h3>
         <p>Explore history, geography, civics, and cultural studies with interactive maps and historical documents.</p>
         <a href="#" class="resource-link" onclick="openEmbeddedModal()">Learn History</a>
