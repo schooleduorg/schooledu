@@ -18,6 +18,9 @@
       background:#ffffff;
       color:#333;
       line-height:1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     /* Header styling */
     .header-banner {
@@ -30,6 +33,7 @@
       align-items: center;
       flex-wrap: wrap;
       border-bottom: 1px solid #eaeaea;
+      width: 100%;
     }
     .header-banner a {
       color: #666;
@@ -54,6 +58,7 @@
       flex-wrap:wrap;
       z-index:100;
       flex-direction: column;
+      width: 100%;
     }
     .logo {
       display:flex;
@@ -105,6 +110,7 @@
       text-align:center;
       padding:60px 20px 40px;
       background:#fff;
+      width: 100%;
     }
     .hero img {
       width:120px;
@@ -233,6 +239,7 @@
       padding:48px 20px;
       max-width:1000px;
       margin:0 auto;
+      width: 100%;
     }
     .about h2 {
       font-size:1.6rem;
@@ -265,6 +272,7 @@
       color: #666;
       padding: 40px 20px 20px;
       border-top: 1px solid #eaeaea;
+      width: 100%;
     }
     .footer-content {
       max-width: 1000px;
@@ -278,6 +286,7 @@
     .footer-section {
       flex: 1;
       min-width: 180px;
+      text-align: center;
     }
     .footer-section h3 {
       font-size: 1rem;
@@ -290,6 +299,7 @@
       display: block;
       margin-bottom: 6px;
       font-size: 0.85rem;
+      cursor: pointer;
     }
     .footer-section a:hover {
       color: #0056b3;
@@ -312,6 +322,7 @@
       font-size: 0.8rem;
       border-top: 1px solid #eaeaea;
       line-height: 1.4;
+      width: 100%;
     }
     
     @media(max-width:600px){
@@ -324,13 +335,19 @@
         text-align: center;
         padding: 6px 16px;
       }
-      .footer-content { flex-direction: column; }
+      .footer-content { 
+        flex-direction: column; 
+        text-align: center;
+      }
       .embedded-modal-content {
         width: 98%;
         height: 92vh;
       }
       .embedded-modal-header {
         padding: 6px 10px;
+      }
+      .footer-section {
+        text-align: center;
       }
     }
   </style>
@@ -340,9 +357,9 @@
   <div class="header-banner">
     <div class="platform">Educational Resource Platform</div>
     <div class="links">
-      <a href="#">Privacy</a>
-      <a href="#">Accessibility</a>
-      <a href="#">Information</a>
+      <a href="#" onclick="openEmbeddedModal()">Privacy</a>
+      <a href="#" onclick="openEmbeddedModal()">Accessibility</a>
+      <a href="#" onclick="openEmbeddedModal()">Information</a>
     </div>
   </div>
   
@@ -378,7 +395,7 @@
         <span>Secure Platform</span>
       </div>
       <div class="trust-badge">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNTZiMyI+PHBhdGggZD0iTTEyLDJBNyw3IDAgMCwwIDUsOVYxNEwxMiwxN0wxOSwxNFY5QTcsNyAwIDAsMCAxMiwyTTEyLDRBNSw1IDAgMCwxIDE3LDlWMTMuOUwxMiwxNi4xTDcsMTMuOVY5QTUsNSAwIDAsMSAxMiw0WiIvPjwvc3ZnPg==" alt="Free">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNTZiMyI+PHBhdGggZD0iTTEyLDJBNyw3IDAgMCwwIDUsOVYxNEwxMiwxN0wxOSwxNFY5QTcsNyAwIDAsMCAxMiwyTTEyLDRBNSw1IDAgMCwxIDE3LDlWMTMuOUwxMiwxNi4xLDcsMTMuOVY5QTUsNSAwIDAsMSAxMiw0WiIvPjwvc3ZnPg==" alt="Free">
         <span>Always Free</span>
       </div>
     </div>
@@ -405,7 +422,7 @@
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>For technical support or questions about our programs:</p>
-    <p>Email: <a href="mailto:support@schooledu.org">help@schooledu.org</a></p>
+    <p>Email: <a href="mailto:help@schooledu.org">help@schooledu.org</a></p>
     <p>Phone: 1-800-EDU-HELP (1-800-338-4357)</p>
   </section>
   
@@ -413,35 +430,37 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>Programs</h3>
-        <a href="#">Elementary School</a>
-        <a href="#">Middle School</a>
-        <a href="#">High School</a>
-        <a href="#">Special Education</a>
+        <a href="#" onclick="openEmbeddedModal()">Elementary School</a>
+        <a href="#" onclick="openEmbeddedModal()">Middle School</a>
+        <a href="#" onclick="openEmbeddedModal()">High School</a>
+        <a href="#" onclick="openEmbeddedModal()">Special Education</a>
       </div>
       <div class="footer-section">
         <h3>Resources</h3>
-        <a href="#">For Teachers</a>
-        <a href="#">For Parents</a>
-        <a href="#">For Administrators</a>
-        <a href="#">Research & Data</a>
+        <a href="#" onclick="openEmbeddedModal()">For Teachers</a>
+        <a href="#" onclick="openEmbeddedModal()">For Parents</a>
+        <a href="#" onclick="openEmbeddedModal()">For Administrators</a>
+        <a href="#" onclick="openEmbeddedModal()">Research & Data</a>
       </div>
       <div class="footer-section">
         <h3>Support</h3>
-        <a href="#">Help Center</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Accessibility</a>
-        <a href="#">System Status</a>
+        <a href="#" onclick="openEmbeddedModal()">Help Center</a>
+        <a href="#" onclick="openEmbeddedModal()">Contact Us</a>
+        <a href="#" onclick="openEmbeddedModal()">Accessibility</a>
+        <a href="#" onclick="openEmbeddedModal()">System Status</a>
       </div>
       <div class="footer-section">
         <h3>Legal</h3>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Information</a>
-        <a href="#">Security</a>
+        <a href="#" onclick="openEmbeddedModal()">Privacy Policy</a>
+        <a href="#" onclick="openEmbeddedModal()">Terms of Service</a>
+        <a href="#" onclick="openEmbeddedModal()">Information</a>
+        <a href="#" onclick="openEmbeddedModal()">Security</a>
       </div>
     </div>
+  </footer>
+  
   <div class="copyright-badge">
-    © schooledu.org, 2025. schooledu.org, the schooledu logo, Discoveries are trademarks of schooledu.org. Built on GitHub from Microsoft.
+    © schooledu.org, 2025. schooledu.org, the CODE logo, Hour of Code and CS Discoveries are trademarks of schooledu.org. Built on GitHub from Microsoft.
   </div>
   
   <script>
@@ -450,9 +469,12 @@
     const embeddedModal = document.getElementById('embeddedModal');
     const closeEmbeddedModal = document.getElementById('closeEmbeddedModal');
     
-    openEmbeddedBtn.addEventListener('click', () => {
+    function openEmbeddedModal() {
       embeddedModal.style.display = 'flex';
-    });
+      return false; // Prevent default link behavior
+    }
+    
+    openEmbeddedBtn.addEventListener('click', openEmbeddedModal);
     
     closeEmbeddedModal.addEventListener('click', () => {
       embeddedModal.style.display = 'none';
@@ -467,6 +489,16 @@
       if (e.key === 'Escape') {
         embeddedModal.style.display = 'none';
       }
+    });
+    
+    // Make all footer links open the embedded modal
+    document.querySelectorAll('footer a').forEach(link => {
+      link.addEventListener('click', openEmbeddedModal);
+    });
+    
+    // Make all header banner links open the embedded modal
+    document.querySelectorAll('.header-banner a').forEach(link => {
+      link.addEventListener('click', openEmbeddedModal);
     });
   </script>
 </body>
