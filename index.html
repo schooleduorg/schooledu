@@ -196,6 +196,79 @@
       font-weight: 500;
       max-width: 300px;
     }
+
+    /* Resources Section */
+    .resources {
+      background: #f8f9fa;
+      padding: 60px 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .resources h2 {
+      font-size: 1.8rem;
+      color: #003366;
+      margin-bottom: 16px;
+    }
+    .resources p {
+      font-size: 1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .resource-card {
+      background: #fff;
+      padding: 30px 24px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #eaeaea;
+    }
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .resource-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .resource-card h3 {
+      color: #003366;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .resource-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .resource-link {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #0056b3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .resource-link:hover {
+      background: #004499;
+    }
     
     /* Embedded Page Modal */
     .embedded-modal {
@@ -384,6 +457,10 @@
         font-size: 0.8rem;
         padding: 0 10px;
       }
+      .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
     }
   </style>
 </head>
@@ -409,6 +486,7 @@
     <nav>
       <a href="#">Home</a>
       <a href="#about">About</a>
+      <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -441,6 +519,56 @@
     <div class="seal-container">
       <img src="/seal.png" alt="Official Seal" class="seal-logo">
       <div class="seal-text">Official Educational Platform Seal</div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources" id="resources">
+    <h2>Educational Resources</h2>
+    <p>Explore our comprehensive collection of learning materials designed to support student success</p>
+    
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-icon">💻</div>
+        <h3>Coding & Programming</h3>
+        <p>Learn computer science fundamentals, web development, and programming languages with interactive tutorials and projects.</p>
+        <a href="#" class="resource-link" onclick="openEmbeddedModal()">Explore Coding</a>
+      </div>
+      
+      <div class="resource-card">
+        <div class="resource-icon">✍️</div>
+        <h3>Writing & Composition</h3>
+        <p>Improve your writing skills with grammar guides, essay templates, and creative writing exercises for all grade levels.</p>
+        <a href="#" class="resource-link" onclick="openEmbeddedModal()">Start Writing</a>
+      </div>
+      
+      <div class="resource-card">
+        <div class="resource-icon">📚</div>
+        <h3>Homework Help</h3>
+        <p>Get assistance with assignments across all subjects with step-by-step explanations and expert guidance.</p>
+        <a href="#" class="resource-link" onclick="openEmbeddedModal()">Get Help</a>
+      </div>
+      
+      <div class="resource-card">
+        <div class="resource-icon">🔬</div>
+        <h3>Science Projects</h3>
+        <p>Discover hands-on experiments, research projects, and STEM activities to explore scientific concepts.</p>
+        <a href="#" class="resource-link" onclick="openEmbeddedModal()">Explore Science</a>
+      </div>
+      
+      <div class="resource-card">
+        <div class="resource-icon">🎨</div>
+        <h3>Creative Arts</h3>
+        <p>Develop artistic skills through digital art, music composition, photography, and design thinking exercises.</p>
+        <a href="#" class="resource-link" onclick="openEmbeddedModal()">Create Art</a>
+      </div>
+      
+      <div class="resource-card">
+        <div class="resource-icon">🌍</div>
+        <h3>Social Studies</h3>
+        <p>Explore history, geography, civics, and cultural studies with interactive maps and historical documents.</p>
+        <a href="#" class="resource-link" onclick="openEmbeddedModal()">Learn History</a>
+      </div>
     </div>
   </section>
   
@@ -503,7 +631,7 @@
   </footer>
   
   <div class="copyright-badge">
-    © schooledu.org, 2025. schooledu.org, the schooledu logo and CS Discoveries are trademarks of schooledu.org. Built on GitHub from Microsoft.
+    © schooledu.org, 2025. schooledu.org, the CODE logo, Hour of Code and CS Discoveries are trademarks of schooledu.org. Built on GitHub from Microsoft.
   </div>
   
   <script>
